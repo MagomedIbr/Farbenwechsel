@@ -19,8 +19,14 @@ button.addEventListener("click", function(){
 
 form.addEventListener("submit", function(e) {
 e.preventDefault();
-alert(inputText.value)
+if(inputText.value=="random"){
+    const a = doc.body.style.background;
+    const randomColor = color[Math.floor(Math.random() * color.length)]; //https://www.delftstack.com/howto/javascript/select-a-random-element-from-an-array-in-javascript/
+    doc.body.style.background = randomColor;
+    alert("Your Color wil be changed to a random color" );
+}else{
+alert("Your Color wil be changed to "+inputText.value)
 doc.body.style.background = inputText.value;
-})
+}})
 
 
